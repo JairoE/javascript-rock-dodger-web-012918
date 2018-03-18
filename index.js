@@ -127,7 +127,7 @@ function endGame() {
   for (rock of rocks){
     GAME.removeChild(rock)
   }
-
+  window.removeEventListener('keydown', moveDodger)
   alert("YOU LOSE!")
 }
 
@@ -140,6 +140,11 @@ function moveDodger(e) {
    * we've declared for you above.)
    * And be sure to use the functions declared below!
    */
+   if (e.which === LEFT_ARROW ){
+     moveDodgerLeft()
+   } else if (e.which === RIGHT_ARROW){
+     moveDodgerRight()
+   }
 }
 
 function moveDodgerLeft() {
@@ -148,6 +153,15 @@ function moveDodgerLeft() {
    * This function should move DODGER to the left
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
+   let dodgerLeftEdge = positionToInteger(DODGER.style.left)
+   let dodgerRightEdge = positionToInteger(DODGER.style.right)
+  function stepleft(){
+    if (dodgerLeftEdge > 4){
+     DODGER.style.left = `${dodgerLeftEdge -=4}px`
+     DODGER.style.right = `${dodgerRightEdge -=4}px`
+    }
+  } 
+  window.requestAnimationFrame(stepleft)
 }
 
 function moveDodgerRight() {
@@ -156,6 +170,15 @@ function moveDodgerRight() {
    * This function should move DODGER to the right
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
+   let dodgerLeftEdge = positionToInteger(DODGER.style.left)
+   let dodgerRightEdge = positionToInteger(DODGER.style.right)
+  function stepright(){
+    if (dodgerRightEdge < 396){
+     DODGER.style.left = `${dodgerLeftEdge +=4}px`
+     DODGER.style.right = `${dodgerRightEdge +=4}px`
+    }
+  } 
+  window.requestAnimationFrame(stepright)
 }
 
 /**
