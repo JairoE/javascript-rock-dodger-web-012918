@@ -121,7 +121,8 @@ function endGame() {
   clearInterval(gameInterval)
 
   while (ROCKS.length != 0){
-    rock = ROCKS.pop()
+    console.log(ROCKS)
+    let rock = ROCKS.pop()
     GAME.removeChild(rock)
   }
   window.removeEventListener('keydown', moveDodger)
