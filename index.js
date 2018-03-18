@@ -98,7 +98,7 @@ function createRock(x) {
    }
 
 
-  window.requestAnimationFrame(moveRock(rock))
+  moveRock(rock)
 
   // We should kick of the animation of the rock around here
 
