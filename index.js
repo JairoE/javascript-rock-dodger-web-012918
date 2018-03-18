@@ -84,7 +84,7 @@ function createRock(x) {
      if (checkCollision(rock)){
        return endGame();
      } else if (top < GAME_HEIGHT ){
-       window.requestAnimationFrame(move)
+       window.requestAnimationFrame(moveRock(rock))
      }
     /**
      * Otherwise, if the rock hasn't reached the bottom of
@@ -96,9 +96,9 @@ function createRock(x) {
      * we should remove the rock from the DOM
      */
    }
-  
 
-  moveRock(rock)
+
+  window.requestAnimationFrame(moveRock(rock))
 
   // We should kick of the animation of the rock around here
 
