@@ -175,7 +175,7 @@ function moveDodgerRight() {
    let dodgerLeftEdge = positionToInteger(DODGER.style.left)
 
   function stepright(){
-    if (dodgerRightEdge < 356){
+    if (dodgerLeftEdge < (GAME_WIDTH-40-4)){
      DODGER.style.left = `${dodgerLeftEdge +=4}px`
 
     }
