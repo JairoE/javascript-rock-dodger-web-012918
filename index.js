@@ -122,7 +122,7 @@ function endGame() {
 
   while (ROCKS.length != 0){
     let rock = ROCKS.pop()
-    GAME.removeChild(rock)
+    rock.remove()
   }
   window.removeEventListener('keydown', moveDodger)
   alert("YOU LOSE!")
