@@ -121,7 +121,6 @@ function endGame() {
   clearInterval(gameInterval)
 
   while (ROCKS.length != 0){
-    console.log(ROCKS)
     let rock = ROCKS.pop()
     GAME.removeChild(rock)
   }
