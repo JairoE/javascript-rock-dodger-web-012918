@@ -121,7 +121,7 @@ function createRock(x) {
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
-  gameInterval = null
+  clearInterval(gameInterval)
   ROCKS.length = 0
   rocks = document.getElementsByClassName('rock')
   for (rock of rocks){
@@ -160,7 +160,7 @@ function moveDodgerLeft() {
      DODGER.style.left = `${dodgerLeftEdge -=4}px`
      DODGER.style.right = `${dodgerRightEdge -=4}px`
     }
-  } 
+  }
   window.requestAnimationFrame(stepleft)
 }
 
@@ -177,7 +177,7 @@ function moveDodgerRight() {
      DODGER.style.left = `${dodgerLeftEdge +=4}px`
      DODGER.style.right = `${dodgerRightEdge +=4}px`
     }
-  } 
+  }
   window.requestAnimationFrame(stepright)
 }
 
